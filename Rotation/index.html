@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--
+# Tilt Card with Ken Burns Effect, Interactive Tilt, Frost Effect, and Dynamic Lighting.
+
+Interactive card animation with layered effects and user-controlled features:
+
+- **Ken Burns Effect**: Smooth zoom and panning animations.
+- **Interactive Tilt**: Real-time tilt and depth adjustments.
+- **Foreground Layer**: Enhanced depth with optional stripes animation.
+- **Dynamic Lighting**: Adjustable intensity and color.
+- **Frost Effect**: Adjustable blur intensity for a frosted glass appearance.
+- **Customizable Controls**: Toggle stripes animation, adjust lighting, control tilt, and manage frost intensity.
+
+https://www.lessrain.com/de/projekte/circus-busch-berlin/
+-->
+    <div class="scene">
+      <div class="background-layer">
+        <div class="slideshow">
+          <div class="slide">
+            <img
+              src="https://assets.codepen.io/573855/codepen-2024-less-rain-circus-busch-berlin-07.webp"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://assets.codepen.io/573855/codepen-2024-less-rain-circus-busch-berlin-01.webp"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://assets.codepen.io/573855/codepen-2024-less-rain-circus-busch-berlin-02.webp"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://assets.codepen.io/573855/codepen-2024-less-rain-circus-busch-berlin-03.webp"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://assets.codepen.io/573855/codepen-2024-less-rain-circus-busch-berlin-04.webp"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://assets.codepen.io/573855/codepen-2024-less-rain-circus-busch-berlin-05.webp"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://assets.codepen.io/573855/codepen-2024-less-rain-circus-busch-berlin-06.webp"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="ambient-light-layer"></div>
+      <div class="foreground-layer">
+        <div class="foreground-content">
+          <img
+            src="https://assets.codepen.io/573855/codepen-2024-less-rain-zirkus-busch-01.svg"
+            alt=""
+          />
+          <img
+            src="https://assets.codepen.io/573855/codepen-2024-less-rain-zirkus-busch-02.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="controls-layer">
+        <div class="controls">
+          <div class="control-group">
+            <label for="rotate_x">Rotate X</label>
+            <input id="rotate_x" type="range" min="-30" max="30" value="0" />
+          </div>
+          <div class="control-group">
+            <label for="rotate_y">Rotate Y</label>
+            <input id="rotate_y" type="range" min="-30" max="30" value="0" />
+          </div>
+          <div class="control-group">
+            <label for="rotate_z">Rotate Z</label>
+            <input id="rotate_z" type="range" min="-15" max="15" value="0" />
+          </div>
+          <!-- New Translate Z Control -->
+          <div class="control-group">
+            <label for="translate_z">Translate Z</label>
+            <input id="translate_z" type="range" min="0" max="100" value="0" />
+          </div>
+          <!-- Light Controls -->
+          <div class="control-group">
+            <label for="light_intensity">Light Intensity</label>
+            <input
+              id="light_intensity"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.8"
+            />
+          </div>
+          <div class="control-group">
+            <label for="light_color">Light Color Picker</label>
+            <input id="light_color" type="color" value="#7B1EB9" hidden />
+            <div id="custom_color_picker" class="custom-color-picker"></div>
+          </div>
+          <div class="control-group">
+            <label for="frost_intensity">Frost Layer Intensity</label>
+            <input
+              id="frost_intensity"
+              type="range"
+              min="0"
+              max="120"
+              value="0"
+            />
+          </div>
+          <div class="control-group">
+            <div class="switcher">
+              <input type="checkbox" id="toggle_stripes_animation" checked />
+              <label for="toggle_stripes_animation"></label>
+              <span class="custom-label">Animate Stripes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="links-layer">
+        <div class="links">
+          <a href="https://www.lessrain.com">Less Rain GmbH</a>
+          <a href="https://www.lessrain.com/de/projekte/circus-busch-berlin/"
+            >Zirkus Busch Project</a
+          >
+          <a href="https://codepen.io/collection/VvwgZP">Codepen Collection</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
