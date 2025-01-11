@@ -1,0 +1,46 @@
+@property --a {
+	syntax: "<angle>";
+	inherits: false;
+	initial-value: 0deg; 
+  }
+  @property --i {
+	syntax: "<number>";
+	inherits: false;
+	initial-value: 0; 
+  }
+  img {
+	width: 230px;
+	aspect-ratio: 1;
+	border-radius: 30px;
+	border: 5px solid #0000;
+	padding: 10px; /* control the gap */
+	background: #ccc;
+	--_s: (90deg - mod(var(--a),.5turn))*9999;
+	mask:  
+	  conic-gradient(#000 0 0) content-box,
+	  linear-gradient(calc(var(--_a,45deg) + mod(var(--a),90deg)*var(--i) +
+		 clamp(-90deg*var(--i),(90deg - mod(var(--a),180deg))*9999,0deg)),
+		#0000 30%,#000 40% 60%,#0000 70%) subtract,
+	  conic-gradient(#000 0 0) padding-box;
+	transition: --i .3s,--a 0s .3s;
+	cursor: pointer;
+  }
+  img.alt {
+	--_a: -45deg;
+  }
+  img:hover {
+	--i: 1;
+	--a: 15turn;
+	transition: --i 0s,--a 30s linear;
+  }
+  
+  
+  body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-content: center;
+	grid-auto-flow: column;
+	gap: 50px;
+	background: #000;
+  }
