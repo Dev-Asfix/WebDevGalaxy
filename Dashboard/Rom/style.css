@@ -1,0 +1,46 @@
+:root {
+    --size: 200px;
+    --th: 1px;
+  }
+  html {
+    background: black;
+  }
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #container {
+    position: relative;
+    transform: translate(calc(-1/2 * var(--size)), calc(-1/2 * var(--size)));
+  }
+  .square {
+    border: solid white var(--th);
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    box-shadow: rgba(255, 255, 255, .5) 0 0 calc(var(--size) / 10) inset, rgba(255, 255, 255, .5) 0 0 calc(var(--size) / 20);
+    animation: bounce 1.5s cubic-bezier(.46,.03,.52,.96) infinite alternate;
+    transform: rotate(45deg) translate(calc(-1 * var(--size) / 5), calc(-1 * var(--size) / 5)); /* Init state of animation */
+  }
+  .square:nth-of-type(2) {
+    animation-delay: 200ms;
+  }
+  .square:nth-of-type(3) {
+    animation-delay: 400ms;
+  }
+  @keyframes bounce {
+    from {
+      transform: rotate(45deg) translate(calc(-1 * var(--size) / 5), calc(-1 * var(--size) / 5)); 
+    }
+    to {
+      transform: rotate(45deg) translate(calc(var(--size) / 5), calc(var(--size) / 5));
+    }
+  }
+  
