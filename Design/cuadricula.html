@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100px;
+      }
+      header,
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+      }
+      main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+      }
+      .card {
+        background-color: #01fa0d;
+        background: #b80101;
+        padding: 1rem;
+        border: 1px solid #42e610;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header</header>
+    <main>
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+      <div class="card">Card 4</div>
+    </main>
+    <footer>Footer</footer>
+  </body>
+</html>
