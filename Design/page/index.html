@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A modern, advanced, and fully responsive web page template."
+    />
+    <title>Advanced Web Page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo">Modern<span>Site</span></a>
+        <nav class="nav">
+          <button class="nav-toggle" aria-label="Toggle Navigation">☰</button>
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Elevate Your Online Presence</h1>
+        <p>
+          Crafting innovative and responsive designs that captivate your
+          audience.
+        </p>
+        <a href="#services" class="btn btn-primary">Discover Services</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          With years of experience in web development, we deliver solutions that
+          are tailored to meet your business goals. Our team is passionate about
+          creating websites that are both functional and visually stunning.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2>What We Do</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Web Development</h3>
+            <p>
+              Modern and scalable web solutions using the latest technologies.
+            </p>
+          </div>
+          <div class="card">
+            <h3>UI/UX Design</h3>
+            <p>
+              Crafting user interfaces that are intuitive and visually
+              appealing.
+            </p>
+          </div>
+          <div class="card">
+            <h3>SEO & Analytics</h3>
+            <p>Optimize your site to rank higher and analyze your audience.</p>
+          </div>
+          <div class="card">
+            <h3>E-Commerce</h3>
+            <p>Build powerful online stores to drive your business growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2>Our Work</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="images/project1.jpg" alt="Project 1" />
+            <h3>Project Title</h3>
+          </div>
+          <div class="portfolio-item">
+            <img src="images/project2.jpg" alt="Project 2" />
+            <h3>Project Title</h3>
+          </div>
+          <div class="portfolio-item">
+            <img src="images/project3.jpg" alt="Project 3" />
+            <h3>Project Title</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 ModernSite. Built with ♥ by Web Experts.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
