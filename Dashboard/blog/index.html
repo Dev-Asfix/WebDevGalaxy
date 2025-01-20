@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <h1><span id="ai-title">A Wall of Text: Blogged</span>
+            <div class="date">November 19, 2024</div>
+        </h1>
+        <div class="featured-image">
+            <div class="expand" onclick="this.classList.toggle('close')"></div>
+        </div>
+        <div class="content">
+    
+            <p id="ai-content-1"></p>
+            <p id="ai-content-2"></p>
+            <script>
+                function fillWithAIContent(prompt, elementId) {
+                    const randomValue = Math.random().toString(36).substring(2, 8);
+                    const uniquePrompt = `${prompt} unique-${randomValue}`;
+                    fetch(`https://text.pollinations.ai/${encodeURIComponent(uniquePrompt)}`)
+                        .then(response => response.text())
+                        .then(data => {
+                            const words = data.split(" ");
+                            const wordCount = Math.min(words.length, 2);
+                            const randomIndexes = Array.from({
+                                    length: wordCount
+                                }, () =>
+                                Math.floor(Math.random() * words.length)
+                            );
+                            randomIndexes.forEach(index => {
+                                words[index] = `<strong>${words[index]}</strong>`;
+                            });
+                            document.getElementById(elementId).innerHTML = words.join(" ");
+                        })
+                        .catch(error => {
+                            console.error("Error fetching AI content:", error);
+                        });
+                }
+                fillWithAIContent("Write no more than four word title for a blog about the benefits of mindfulness in daily life.", "ai-title");
+                fillWithAIContent("Write a short intro paragraph about the benefits of mindfulness in daily life.", "ai-content-1");
+                fillWithAIContent("Write a short narative paragraph about the benefits of mindfulness in daily life.", "ai-content-2");
+            </script>
+            <p>Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero.
+            <aside>
+                <p><strong>Cras id dui</strong>. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede.</p>
+            </aside>
+            Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.</p>
+            <p>Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna.</p>
+    
+            <div class="dotmap"></div>
+            <script>
+                function hoverFollow(target) {
+                    target.addEventListener('mousemove', (event) => {
+                        const rect = target.getBoundingClientRect();
+                        const x = event.clientX - rect.left;
+                        const y = event.clientY - rect.top;
+                        target.style.setProperty('--x', `${x}px`);
+                        target.style.setProperty('--y', `${y}px`);
+                    });
+                }
+                hoverFollow(document.querySelector('.dotmap'));
+            </script>
+    
+            <h2>It's Really a Lot of Words</h2>
+            <p>Aliquam convallis sollicitudin purus. Praesent aliquam, enim at <strong>fermentum mollis</strong>, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.</p>
+            <p>Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede.
+            <aside>
+                <p><strong>Donec interdum</strong>, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. <a href="https://codepen.io/RAFA3L" target="_blank">Fusce fermentum</a>. Nullam cursus lacinia erat.</p>
+            </aside>
+            Praesent blandit laoreet nibh. Fusce convallis metus id felis luctus adipiscing. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Ut leo. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.</p>
+    
+            <div class="planet">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <h2>Can You Make it Look Good?</h2>
+            <p>Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.</p>
+            <p>Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis.</p>
+            <p>Nunc egestas, augue at pellentesque laoreet, felis eros <strong>vehicula leo</strong>, at malesuada velit leo quis pede. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Fusce fermentum. Nullam cursus lacinia erat. Praesent blandit laoreet nibh. Fusce convallis metus id felis luctus adipiscing. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Ut leo. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.</p>
+            <div class="skyline"></div>
+            <p>Proin ac blandit ligula. Aenean ornare magna vitae elit laoreet, vitae luctus nulla pharetra. Integer at tellus congue, elementum sapien id, convallis nunc. Aenean sit amet enim et orci euismod vestibulum. Nulla volutpat scelerisque elit, sit amet scelerisque nisl pulvinar in. Ut molestie eros at bibendum pharetra. Sed efficitur dictum nunc, id vulputate risus vulputate a. Praesent vehicula nec est vel rhoncus. Ut vehicula, dolor nec suscipit venenatis, augue velit congue odio, sit amet tincidunt elit eros eu quam.</p>
+            <p>Morbi sed nulla at justo vestibulum cursus ut id urna. Etiam accumsan, velit sed feugiat vehicula, nisi tortor iaculis orci, sed bibendum elit urna vel purus. Suspendisse sagittis nisi nec elit convallis, et efficitur sapien venenatis. Curabitur auctor justo sapien, quis tristique neque cursus in. Integer fermentum metus id sapien tristique, a hendrerit lacus blandit. Fusce dictum sem risus, nec blandit ligula fermentum ac. Praesent tincidunt felis sed mi venenatis maximus.</p>
+            <p>Suspendisse potenti. Quisque sed ex mauris. Aenean rhoncus, tortor at interdum finibus, erat risus scelerisque nisi, non vehicula nisi libero non metus. Integer vel metus a justo viverra pharetra ut ac arcu. Nam blandit nunc justo, vitae gravida ligula luctus nec. Fusce convallis, justo a porttitor ultricies, sapien est fermentum ex, ut ornare tortor lectus ac eros. Integer facilisis risus non neque lacinia scelerisque. Mauris eu turpis eros. Donec tempor nisi a odio posuere ultricies. Nullam malesuada dui sit amet tortor varius fringilla.</p>
+        </div>
+        <div class="foot">
+            <a href="https://codepen.io/RAFA3L" target="_blank"><img src="https://assets.codepen.io/3421562/internal/avatars/users/default.png" alt="" class="profile-card"></a>
+            <div class="author">Author:<br><a href="https://codepen.io/RAFA3L" target="_blank"><span>@</span>RAFA3L</a></div>
+        </div>
+    </article>
+</body>
+</html>

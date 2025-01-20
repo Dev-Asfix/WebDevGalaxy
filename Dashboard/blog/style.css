@@ -1,0 +1,338 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	scroll-behavior: smooth;
+}
+html,
+body {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: "Satoshi", sans-serif, monospace;
+	color: #eee;
+	font-size: 18px;
+	line-height: 161.8%;
+	background: #212431;
+	interpolate-size: allow-keywords;
+}
+
+::-webkit-scrollbar {
+	width: 14px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #ea5c1f;
+	border: 4px solid #212431;
+	cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #ea5c1f77;
+}
+
+body :is(h1, h2) {
+	color: #ea5c1f;
+	width: fit-content;
+}
+body h1 {
+	font-size: 1.8em;
+}
+article {
+	max-width: 618px;
+	padding: 8px 24px;
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	font-weight: 100;
+	position: relative;
+	overflow: hidden;
+
+	border-bottom: 4px solid #d6d7d711;
+	border-left: 4px solid #d6d7d711;
+
+	background: linear-gradient(90deg, #46506433 0%, #4f5d7533);
+	border-top-right-radius: 64px;
+}
+article aside {
+	border-left: 4px solid #ea5c1f;
+	padding-left: 16px;
+	margin-bottom: 16px;
+	line-height: 124%;
+}
+article strong {
+	font-weight: 600;
+}
+article a {
+	font-weight: 500;
+	color: #ea5c1f;
+	text-decoration: none;
+	cursor: pointer;
+}
+article a:hover {
+	text-decoration: underline;
+}
+article .foot {
+	display: flex;
+	gap: 24px;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-bottom: 16px;
+}
+article .foot img {
+	max-width: 84px;
+	height: auto;
+	border: 4px solid #f5f5f5;
+	border-top-color: #ea5c1f;
+	border-right-color: #ea5c1f;
+	object-fit: contain;
+}
+article .author a {
+	font-weight: 600;
+}
+article .author span {
+	font-size: 1.4em;
+	padding-right: 2px;
+	translate: 0 2px;
+	rotate: -33deg;
+	display: inline-block;
+	color: #eec7b7;
+	transition: all 0.2s ease-in-out;
+}
+article .author a:hover,
+article .author a:hover span {
+	color: #ea5c1f;
+	rotate: 0deg;
+}
+
+.featured-image {
+	width: 100%;
+	height: 324px;
+	background: url("https://picsum.photos/600/400?grayscale");
+	background-size: cover;
+	background-position: 50% 16.18%;
+	margin-top: 16px;
+	border-top-right-radius: 42px;
+	border-bottom: 4px solid #ea5c1f;
+	position: relative;
+	z-index: 1;
+}
+.featured-image .expand {
+	position: absolute;
+	right: 0px;
+	bottom: -4px;
+	color: #fff;
+	cursor: pointer;
+	background: #292f3e;
+	border-top-left-radius: 32px;
+	width: 64px;
+	height: 64px;
+	border-left: 4px solid #ea5c1f;
+	border-top: 4px solid #ea5c1f;
+}
+.featured-image .expand::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: all 0.4s ease-in-out;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='%23ea5c1f' viewBox='0 0 256 256'%3E%3Cpath d='M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z'%3E%3C/path%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50%;
+}
+.featured-image .expand.close::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='%23ea5c1f' viewBox='0 0 256 256'%3E%3Cpath d='M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z'%3E%3C/path%3E%3C/svg%3E");
+}
+.featured-image .expand:hover::before {
+	rotate: 90deg;
+}
+.featured-image .expand.close:hover::before {
+	rotate: 45deg;
+}
+
+article h1 {
+	position: absolute;
+	margin: 0;
+	top: 0;
+	padding: 16px 22px 16px 0px;
+	background: #292f3e;
+	border-bottom-right-radius: 24px;
+	z-index: 2;
+	line-height: 100%;
+}
+article .date {
+	position: absolute;
+	margin: 0;
+	bottom: -28px;
+	padding: 0px 24px 8px 0px;
+	border-bottom-right-radius: 22px;
+	z-index: 2;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 400;
+	background: #292f3e;
+}
+
+article .content {
+	transition: height 1s ease-out;
+	visibility: visible;
+	height: 0;
+	overflow: clip;
+}
+article:has(.expand.close) .content {
+	transition: height 1s ease-in;
+	height: auto;
+}
+
+.dotmap {
+	width: 100%;
+	height: min(30vw, 200px);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background: linear-gradient(#fff0, #fff4, #fff0);
+	mask-image: url("https://assets.codepen.io/3421562/dotmap.svg");
+	position: relative;
+}
+.dotmap::before {
+	scale: 0;
+	opacity: 0;
+	transition: all 0.2s ease-out;
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 200px;
+	background: #ea5c1f;
+	filter: blur(40px);
+	top: var(--y);
+	left: var(--x);
+	translate: -50% -50%;
+}
+.dotmap:hover::before {
+	scale: 1;
+	opacity: 1;
+}
+.dotmap::after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url("https://assets.codepen.io/3421562/dotmap_h.svg");
+	top: 0;
+	left: 0;
+}
+
+.planet {
+	width: 100%;
+	height: min(30vw, 216px);
+	overflow: hidden;
+	position: relative;
+	background: url("https://assets.codepen.io/3421562/stars.svg");
+	background-size: contain;
+	background-blend-mode: color-burn;
+	box-shadow: 4px 6px 0 0 #212431, 0 8px 16px 0 #0000;
+}
+.planet::after {
+	display: block;
+	content: "";
+	width: min(60vw, 500px);
+	height: min(60vw, 500px);
+	box-shadow: -2px 0 12px 1px #ea5c1f44, inset 42px -142px 64px 1px #ea5c1faa,
+		inset -2px 2px 6px 1px #ea5c1f22, inset -8px 22px 16px 1px #ea5c1f22,
+		inset -42px 42px 42px 1px #212431, inset 0 0 100px 1px #fff3;
+	border-radius: 100%;
+	position: absolute;
+	right: -34%;
+	top: 6%;
+	background: #41322c;
+}
+.planet span {
+	position: absolute;
+	width: min(110vw, 800px);
+	height: min(110vw, 800px);
+	right: -46%;
+	top: -100%;
+	border-radius: 100%;
+	transform-style: preserve-3d;
+	transform: rotateX(75deg) rotateY(16deg) rotate3d(0, 0, 1, 0deg);
+	animation: pRev 20s linear infinite;
+	border: 2px solid #ea5c1f44;
+}
+@keyframes pRev {
+	to {
+		transform: rotateX(75deg) rotateY(16deg) rotate3d(0, 0, 1, 360deg);
+	}
+}
+.planet span::before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: calc(100% - 4px);
+	width: 18px;
+	height: 18px;
+	background: #ea5c1f;
+	box-shadow: 0 0 0 0.3px #ea5c1f, inset -2px -2px 4px 0 #ea5c1faa,
+		inset 2px 2px 4px 0 #444;
+	border-radius: 100%;
+	transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
+	transition: all 0.1s linear;
+	animation: pRot 20s linear infinite;
+}
+@keyframes pRot {
+	64% {
+		width: 0;
+		height: 0;
+	}
+	100% {
+		transform: rotateX(90deg) rotate3d(0, 1, 0, -360deg);
+		width: 0;
+		height: 0;
+	}
+}
+.planet span:nth-child(2) {
+	scale: 0.9;
+	animation-delay: -32s;
+	animation-duration: 42s;
+}
+.planet span:nth-child(2)::before {
+	animation-delay: -32s;
+	animation-duration: 42s;
+	width: 32px;
+	height: 32px;
+	background: #b98068;
+	top: calc(100% - 16px);
+}
+
+.planet span:nth-child(3) {
+	scale: 1.08;
+	animation-delay: -3s;
+	animation-direction: reverse;
+}
+.planet span:nth-child(3)::before {
+	animation-delay: -3s;
+	width: 10px;
+	height: 10px;
+	animation-direction: reverse;
+	top: calc(100% - 1px);
+}
+.skyline {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+	background: url("https://assets.codepen.io/3421562/skyline.svg");
+	background-size: max(100%, 500px);
+	background-position: 50% 12px;
+	background-repeat: no-repeat;
+	background-blend-mode: color-burn;
+	box-shadow: 0px 6px 0 0 #212431, 0 8px 16px 0 #0000;
+}

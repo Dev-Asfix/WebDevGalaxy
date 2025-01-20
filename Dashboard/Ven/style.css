@@ -13,13 +13,14 @@ body {
 
 .card {
 	position: relative;
-	width: 350px;
-	height: 566px;
+	width: 500px;
+	height: 500px;
 	perspective: 1000px;
 	overflow: hidden;
-	border-radius: 32px;
+	border-radius: 100%;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 	background-color: #c4d9e9;
+	
 }
 
 .parallax-layer {
@@ -34,8 +35,8 @@ body {
 }
 
 .parallax-layer img {
-	height: 115%;
-	margin-left: -90%;
+	height: 140%;
+	margin-left: -30%;
 }
 
 .bg {
